@@ -1,0 +1,24 @@
+{
+  "name": "profilez",
+  "version": "0.1.0",
+  "description": "A cross-server profile manager.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThatZoeGirl/Profilez.git"
+  },
+  "keywords": [
+    "Discord",
+    "API",
+    "Profile"
+  ],
+  "author": "Zoë <that.silly.zoe.girl@outlook.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ThatZoeGirl/Profilez/issues"
+  },
+  "homepage": "https://github.com/ThatZoeGirl/Profilez#readme"
+}
