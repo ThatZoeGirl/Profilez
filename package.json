@@ -4,7 +4,12 @@
   "description": "A cross-server profile manager.",
   "main": "src/index.js",
   "scripts": {
-    "test": "node ."
+    "generate": "npx prisma generate --schema ./prisma-profiles/schema.prisma --no-engine && npx prisma generate --schema ./prisma-servers/schema.prisma --no-engine",
+    "migrate": "npx prisma migrate dev --schema ./prisma-profiles/schema.prisma && npx prisma migrate dev --schema ./prisma-servers/schema.prisma",
+    "deploy": "npx prisma migrate deploy --schema ./prisma-profiles/schema.prisma && npx prisma migrate deploy --schema ./prisma-servers/schema.prisma",
+    "studio-profiles": "npx prisma studio --schema ./prisma-profiles/schema.prisma --port 5555",
+    "studio-servers":"npx prisma studio --schema ./prisma-servers/schema.prisma --port 5556",
+    "start": "node ."
   },
   "repository": {
     "type": "git",
@@ -20,5 +25,14 @@
   "bugs": {
     "url": "https://github.com/ThatZoeGirl/Profilez/issues"
   },
-  "homepage": "https://github.com/ThatZoeGirl/Profilez#readme"
+  "homepage": "https://github.com/ThatZoeGirl/Profilez#readme",
+  "dependencies": {
+    "@prisma/extension-accelerate": "^2.0.2",
+    "@zoe01/zcord": "^0.0.1",
+    "discord.js": "^14.21.0",
+    "dotenv": "^17.2.1"
+  },
+  "devDependencies": {
+    "prisma": "^6.13.0"
+  }
 }
