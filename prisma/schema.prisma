@@ -1,0 +1,46 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../prisma/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("RAPHAEL_DB_URL")
+}
+
+enum StaffType {
+  OWNER
+  ADMIN
+  STAFF
+}
+
+enum PoolType {
+  OFFICIAL
+  FEATURED
+  FREE
+  BANNED
+}
+
+model Staff {
+  id          BigInt    @unique
+  created     BigInt
+  type        StaffType
+}
+
+model Pool {
+  id          BigInt    @unique
+  created     BigInt
+  type        PoolType
+  owner       Int[]     @unique
+  admin       Int[]     @unique
+  staff       Int[]     @unique
+  server      Json[]
+  warning     Json[]
+  ban         Json[]
+}

@@ -1,6 +1,6 @@
 # dbs
-prisma-*/generated
-prisma-*/migrations
+prisma*/generated
+prisma*/migrations
 
 # Logs
 npm-debug.log*
